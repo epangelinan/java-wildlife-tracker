@@ -5,6 +5,7 @@ import java.util.List;
 public abstract class Animal {
   public String name;
   public int id;
+  public String type;
 
 
   // public Animal(String name) {
@@ -30,9 +31,10 @@ public abstract class Animal {
     }
   }
 
+//Updated
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO animals (name) VALUES (:name);";
+      String sql = "INSERT INTO animals (name, type) VALUES (:name, :type);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
         .executeUpdate()
