@@ -17,6 +17,9 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);`
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
+### Lynn's Changes
+* In index.vtl:  updated bottom label from 'All Animals & Sightings' to 'Non-Endangered Animal Sightings'
+
 ### License
 
 Copyright (c) 2017 **_MIT License_**
