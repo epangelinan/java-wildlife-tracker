@@ -18,7 +18,8 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
 ### Lynn's Changes
-* In index.vtl:  updated bottom label from 'All Animals & Sightings' to 'Non-Endangered Animal Sightings'
+* Changed Animal to be an abstract class
+* 
 
 ### License
 

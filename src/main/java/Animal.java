@@ -2,14 +2,15 @@ import org.sql2o.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Animal {
+public abstract class Animal {
   public String name;
   public int id;
 
-  public Animal(String name) {
-    this.name = name;
-    this.id = id;
-  }
+
+  // public Animal(String name) {
+  //   this.name = name;
+  //   this.id = id;
+  // }
 
   public String getName() {
     return name;
@@ -38,24 +39,25 @@ public class Animal {
         .getKey();
     }
   }
+//Remove because this is now an abstract class.
+  // public static List<Animal> all() {
+  //   try(Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT * FROM animals;";
+  //     return con.createQuery(sql)
+  //       .executeAndFetch(Animal.class);
+  //   }
+  // }
 
-  public static List<Animal> all() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM animals;";
-      return con.createQuery(sql)
-        .executeAndFetch(Animal.class);
-    }
-  }
-
-  public static Animal find(int id) {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM animals WHERE id=:id;";
-      Animal animal = con.createQuery(sql)
-        .addParameter("id", id)
-        .executeAndFetchFirst(Animal.class);
-      return animal;
-    }
-  }
+//Remove because this is now an abstract class
+  // public static Animal find(int id) {
+  //   try(Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT * FROM animals WHERE id=:id;";
+  //     Animal animal = con.createQuery(sql)
+  //       .addParameter("id", id)
+  //       .executeAndFetchFirst(Animal.class);
+  //     return animal;
+  //   }
+  // }
 
   public void updateName(String name) {
     try(Connection con = DB.sql2o.open()) {
