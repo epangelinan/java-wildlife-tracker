@@ -67,4 +67,12 @@
       <p>Click for details</p>
     </a>
   #end
+  #foreach ($endangeredAnimal in $endangeredAnimals)
+    <a href="/endangered_animal/$endangeredAnimal.getId()" class="thumbnail">
+      <h4>$endangeredAnimal.getName()</h4>
+      <h4>$endangeredAnimal.getSightings().size() Reported Sighting(s)</h4>
+      <p>Click for details</p>
+    </a>
+  #end
+  <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
 #end

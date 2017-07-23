@@ -17,6 +17,11 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);`
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
+CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
+CREATE TABLE endangered_animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
+CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);
+CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+
 ### Lynn's Changes
 * Changed Animal to be an abstract class
 * Added Endangered Animal properties health and age columns to animals table
