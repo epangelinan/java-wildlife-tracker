@@ -1,0 +1,12 @@
+body {
+  background-image: url("../img/forest.jpg");
+  font-family: cursive;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+h3 {
+  color: darkBlue;
+}
