@@ -46,6 +46,7 @@ public class App {
       model.put("animals", Animal.all());
       String animal = Animal.find(animalIdSelected).getName();
       model.put("animal", animal);
+      model.put("endangeredAnimals", EndangeredAnimal.endangeredAll());
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

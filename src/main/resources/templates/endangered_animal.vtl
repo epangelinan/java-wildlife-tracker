@@ -7,10 +7,12 @@
   <p>To report a sighting, please visit the <a href="/">home page</a>.</p>
 #else
   #foreach($sighting in $endangeredAnimal.getSightings())
-    Location: <strong>$sighting.getLocation()</strong>
-    Health: $endangeredAnimal.getHealth()
-    Age: $endangeredAnimal.getAge()
-    Reported by: $sighting.getRangerName()
-    ID: $sighting.getId()
-  #end
+    <strong>Location:</strong> $sighting.getLocation()
+    <strong>Health:</strong> $endangeredAnimal.getHealth()
+    <strong>Age:</strong> $endangeredAnimal.getAge()
+    <strong>Reported by:</strong> $sighting.getRangerName()
+    <strong>ID:</strong> $sighting.getId()
+    <strong>Date sighted:</strong> $sighting.getTimeSighted()
+    <p></p>
+  #end  
 #end
