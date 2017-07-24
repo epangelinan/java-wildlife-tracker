@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.text.DateFormat;
 import java.util.Date;
+import java.sql.Timestamp;
+
 
 public class SightingTest {
 
@@ -18,6 +20,23 @@ public class SightingTest {
     testAnimal.save();
     Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
     assertEquals(true, testSighting instanceof Sighting);
+  }
+
+
+  @Test
+  public void getLocation_animalInstantiatesWithLocation_String() {
+  Animal testAnimal = new Animal("Deer");
+  testAnimal.save();
+  Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+  assertEquals("45.472428, -121.946466", testSighting.getLocation());
+  }
+
+  @Test
+  public void getRangerName_animalInstantiatesWithRangerName_Ranger_Avery() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    assertEquals("Ranger Avery", testSighting.getRangerName());
   }
 
   @Test

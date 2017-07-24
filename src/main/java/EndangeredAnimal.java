@@ -122,7 +122,7 @@ public static EndangeredAnimal find(int id) {
     }
   }
 
-
+//No longer need getSightings() here because it is present in Animal class
   // public List<Sighting> getSightings() {
   //   try(Connection con = DB.sql2o.open()) {
   //     String sql = "SELECT * FROM sightings WHERE animal_id=:id;";

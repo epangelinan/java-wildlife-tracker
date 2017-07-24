@@ -68,8 +68,8 @@ public class Animal {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE animals SET name=:name WHERE id=:id;";
       con.createQuery(sql)
-        .addParameter("id", id)
         .addParameter("name", name)
+        .addParameter("id", id)
         .throwOnMappingFailure(false)
         .executeUpdate();
     }
